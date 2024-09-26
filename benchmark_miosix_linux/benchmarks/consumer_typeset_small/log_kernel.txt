@@ -1,0 +1,12 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 19 2024 12:53:28, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16624840 out of 16727312 Bytes
+[Miosix MiBench] 'typeset small' start
+[Miosix MiBench] 'typeset small' end, time = 6158739236 ns
+[Miosix MiBench] 'typeset small' stack usage = 38332 B
+[Miosix MiBench] 'typeset small' heap usage = 3847440 B
+[Miosix MiBench] 'typeset small' heap potential leak = 3736088 B

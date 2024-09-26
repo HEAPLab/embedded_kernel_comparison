@@ -1,0 +1,11 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp src/dijkstra_small.c
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common
+
+

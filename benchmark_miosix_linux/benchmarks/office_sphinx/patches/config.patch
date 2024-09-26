@@ -1,0 +1,15 @@
+--- sphinx_orig/config.sub	2001-10-18 18:26:45.000000000 +0200
++++ sphinx/config.sub	2024-03-15 14:05:17.894548477 +0100
+@@ -861,8 +861,10 @@
+ 		os=-coff
+ 		;;
+ 	*)
+-		echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
+-		exit 1
++	    basic_machine=none-none
++		os=-linux-gnu
++		#echo Invalid configuration \`$1\': machine \`$basic_machine\' not recognized 1>&2
++		#exit 1
+ 		;;
+ esac
+ 

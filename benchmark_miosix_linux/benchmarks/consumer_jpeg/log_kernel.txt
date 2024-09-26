@@ -1,0 +1,37 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 15 2024 18:19:35, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16705472 out of 16775176 Bytes
+Stack memory statistics.
+Size: 65536
+Used (current/max): 316/876
+Free (current/min): 65220/64660
+Heap memory statistics.
+Size: 16775176
+Used (current/max): 69704/70664
+Free (current/min): 16705472/16704512
+type enter
+
+[Miosix MiBench] starting 'jpeg small'
+[Miosix MiBench] finished 'jpeg small', time=9992718186 ns
+Stack memory statistics.
+Size: 65536
+Used (current/max): 316/3524
+Free (current/min): 65220/62012
+Heap memory statistics.
+Size: 16775176
+Used (current/max): 70504/306184
+Free (current/min): 16704672/16468992
+[Miosix MiBench] starting 'jpeg large'
+[Miosix MiBench] finished 'jpeg large', time=27918178828 ns
+Stack memory statistics.
+Size: 65536
+Used (current/max): 316/3524
+Free (current/min): 65220/62012
+Heap memory statistics.
+Size: 16775176
+Used (current/max): 70504/905224
+Free (current/min): 16704672/15869952

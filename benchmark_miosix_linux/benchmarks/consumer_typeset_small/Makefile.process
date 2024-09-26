@@ -1,0 +1,123 @@
+
+PROCESS_RAMSIZE := $$((4*1024*1024))
+PROCESS_STACKSIZE := 65536
+
+OSUNIX  = 1
+OSDOS   = 0
+OSMAC   = 0
+
+DBFIX   = 0
+
+USESTAT = 1
+SAFEDFT = 0
+
+DEBUGGING = 0
+TRACING =
+
+LIBFONT = font
+LIBMAPS = maps
+LIBINCL = include
+LIBDATA = data
+LIBHYPH = hyph
+LIBLOCA = locale
+
+CHARIN	= 1
+CHAROUT	= 0
+
+USELOC	= 0
+LOC_FR	= fr
+LOC_DE	= de
+
+COLLATE	= 1
+
+PDF_COMPRESSION	= 0
+ZLIB		=
+ZLIBPATH	=
+
+BENCHMARK_CFLAGS	= -DOS_UNIX=$(OSUNIX)					\
+	  -DOS_DOS=$(OSDOS)					\
+	  -DOS_MAC=$(OSMAC)					\
+	  -DDB_FIX=$(DBFIX)					\
+	  -DUSE_STAT=$(USESTAT)					\
+	  -DSAFE_DFT=$(SAFEDFT)					\
+	  -DCOLLATE=$(COLLATE)					\
+	  -DLIB_DIR=\"$(LIBDIR)\"				\
+	  -DFONT_DIR=\"$(LIBFONT)\"				\
+	  -DMAPS_DIR=\"$(LIBMAPS)\"				\
+	  -DINCL_DIR=\"$(LIBINCL)\"				\
+	  -DDATA_DIR=\"$(LIBDATA)\"				\
+	  -DHYPH_DIR=\"$(LIBHYPH)\"				\
+	  -DLOCALE_DIR=\"$(LIBLOCA)\"				\
+	  -DCHAR_IN=$(CHARIN)					\
+	  -DCHAR_OUT=$(CHAROUT)					\
+	  -DLOCALE_ON=$(USELOC)					\
+	  -DASSERT_ON=1 $(COPTS)				\
+	  -DDEBUG_ON=$(DEBUGGING)				\
+	  $(TRACING)						\
+	  -DPDF_COMPRESSION=$(PDF_COMPRESSION)			\
+	  $(ZLIBPATH)
+
+
+
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp \
+    src/z01.c \
+    src/z02.c \
+    src/z03.c \
+    src/z04.c \
+    src/z05.c \
+    src/z06.c \
+    src/z07.c \
+    src/z08.c \
+    src/z09.c \
+    src/z10.c \
+    src/z11.c \
+    src/z12.c \
+    src/z13.c \
+    src/z14.c \
+    src/z15.c \
+    src/z16.c \
+    src/z17.c \
+    src/z18.c \
+    src/z19.c \
+    src/z20.c \
+    src/z21.c \
+    src/z22.c \
+    src/z23.c \
+    src/z24.c \
+    src/z25.c \
+    src/z26.c \
+    src/z27.c \
+    src/z28.c \
+    src/z29.c \
+    src/z30.c \
+    src/z31.c \
+    src/z32.c \
+    src/z33.c \
+    src/z34.c \
+    src/z35.c \
+    src/z36.c \
+    src/z37.c \
+    src/z38.c \
+    src/z39.c \
+    src/z40.c \
+    src/z41.c \
+    src/z42.c \
+    src/z43.c \
+    src/z44.c \
+    src/z45.c \
+    src/z46.c \
+    src/z47.c \
+    src/z48.c \
+    src/z49.c \
+    src/z50.c \
+    src/z51.c
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Isrc
+
+

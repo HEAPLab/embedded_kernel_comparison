@@ -1,0 +1,14 @@
+*.d
+*.o
+*.bin
+*.map
+*.elf
+*.hex
+security_miosix/bin/exploit
+!security_miosix/stm32f469_image.bin
+security_linux/exploit
+security_linux/exploit.gdb
+security_mpu_freertos/build
+!security_mpu_freertos/stm32f469_image.bin
+!benchmark_freertos/stm32f469_images/*.bin
+benchmark_freertos/lib/build

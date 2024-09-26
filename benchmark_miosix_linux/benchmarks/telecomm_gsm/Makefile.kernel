@@ -1,0 +1,46 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp \
+    src/add.c		\
+    src/code.c		\
+    src/debug.c		\
+    src/decode.c		\
+    src/long_term.c	\
+    src/lpc.c		\
+    src/preprocess.c	\
+    src/rpe.c		\
+    src/gsm_destroy.c	\
+    src/gsm_decode.c	\
+    src/gsm_encode.c	\
+    src/gsm_explode.c	\
+    src/gsm_implode.c	\
+    src/gsm_create.c	\
+    src/gsm_print.c	\
+    src/gsm_option.c	\
+    src/short_term.c	\
+    src/table.c \
+    src/toast.c 		\
+	src/toast_lin.c	\
+	src/toast_ulaw.c	\
+	src/toast_alaw.c	\
+	src/toast_audio.c
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Iinc
+
+BENCHMARK_CFLAGS := -DSTUPID_COMPILER -DNeedFunctionPrototypes=1 -DSASR
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+

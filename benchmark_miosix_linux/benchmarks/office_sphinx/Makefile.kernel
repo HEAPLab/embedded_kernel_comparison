@@ -1,0 +1,86 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp \
+src/tty-continuous.c \
+src/libsphinx2/f2read.c \
+src/libsphinx2/err.c \
+src/libsphinx2/unlimit.c \
+src/libsphinx2/awritedouble.c \
+src/libsphinx2/skipto.c \
+src/libsphinx2/areadchar.c \
+src/libsphinx2/eht_quit.c \
+src/libsphinx2/linklist.c \
+src/libsphinx2/bisearch.c \
+src/libsphinx2/awritefloat.c \
+src/libsphinx2/strcasecmp.c \
+src/libsphinx2/r_agc_noise.c \
+src/libsphinx2/add-table.c \
+src/libsphinx2/live_norm.c \
+src/libsphinx2/str2words.c \
+src/libsphinx2/phone.c \
+src/libsphinx2/util.c \
+src/libsphinx2/list.c \
+src/libsphinx2/logmsg.c \
+src/libsphinx2/longio.c \
+src/libsphinx2/get_a_word.c \
+src/libsphinx2/uttproc.c \
+src/libsphinx2/peek_length.c \
+src/libsphinx2/kb_main.c \
+src/libsphinx2/agc_emax.c \
+src/libsphinx2/cdcn_init.c \
+src/libsphinx2/awriteshort.c \
+src/libsphinx2/awritechar.c \
+src/libsphinx2/f2write.c \
+src/libsphinx2/areadshort.c \
+src/libsphinx2/nxtarg.c \
+src/libsphinx2/areadfloat.c \
+src/libsphinx2/areadint.c \
+src/libsphinx2/norm.c \
+src/libsphinx2/lab.c \
+src/libsphinx2/cache_lm.c \
+src/libsphinx2/CM_funcs.c \
+src/libsphinx2/hmm_tied_r.c \
+src/libsphinx2/cep_rw.c \
+src/libsphinx2/search.c \
+src/libsphinx2/awriteint.c \
+src/libsphinx2/time_align.c \
+src/libsphinx2/resfft.c \
+src/libsphinx2/lm.c \
+src/libsphinx2/cdcn_update.c \
+src/libsphinx2/hash.c \
+src/libsphinx2/pconf.c \
+src/libsphinx2/fbs_main.c \
+src/libsphinx2/cdcn_norm.c \
+src/libsphinx2/sc_cbook_r.c \
+src/libsphinx2/salloc.c \
+src/libsphinx2/searchlat.c \
+src/libsphinx2/areaddouble.c \
+src/libsphinx2/lm_3g.c \
+src/libsphinx2/lmclass.c \
+src/libsphinx2/prime.c \
+src/libsphinx2/blk_cdcn_norm.c \
+src/libsphinx2/allphone.c \
+src/libsphinx2/dict.c \
+src/libsphinx2/sc_vq.c \
+src/libsphinx2ad/cont_ad_base.c \
+src/libsphinx2ad/ad_base.c \
+src/libsphinx2fe/fe_sigproc.c \
+src/libsphinx2fe/fe_interface.c
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Iinclude -Isrc -Isrc/libsphinx2/include -Isrc/libsphinx2ad -Isrc/libsphinx2fe -DHAVE_CONFIG_H -DFAST8B=1
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+

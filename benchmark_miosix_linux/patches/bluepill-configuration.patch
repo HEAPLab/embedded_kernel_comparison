@@ -1,0 +1,50 @@
+diff --git a/benchmarks/_common/config/Makefile.inc b/benchmarks/_common/config/Makefile.inc
+index ded8b25..d1eeac6 100644
+--- a/benchmarks/_common/config/Makefile.inc
++++ b/benchmarks/_common/config/Makefile.inc
+@@ -35,9 +35,9 @@
+ #OPT_BOARD := stm32f100rc_solertegiard
+ #OPT_BOARD := stm32f205rc_skyward_stormtrooper
+ #OPT_BOARD := stm32f401vc_stm32f4discovery
+-#OPT_BOARD := stm32f103c8_breakout
++OPT_BOARD := stm32f103c8_breakout
+ #OPT_BOARD := stm32f100c8_microboard
+-OPT_BOARD := stm32f469ni_stm32f469i-disco
++#OPT_BOARD := stm32f469ni_stm32f469i-disco
+ #OPT_BOARD := stm32f429zi_skyward_homeone
+ #OPT_BOARD := stm32f401re_nucleo
+ #OPT_BOARD := stm32f746zg_nucleo
+@@ -71,9 +71,9 @@ OPT_BOARD := stm32f469ni_stm32f469i-disco
+ ## size and speed
+ ##
+ #OPT_OPTIMIZATION := -O0
+-OPT_OPTIMIZATION := -O2
++#OPT_OPTIMIZATION := -O2
+ #OPT_OPTIMIZATION := -O3
+-#OPT_OPTIMIZATION := -Os
++OPT_OPTIMIZATION := -Os
+ 
+ ##
+ ## C++ Exception/rtti support disable flags.
+diff --git a/benchmarks/_common/config/miosix_settings.h b/benchmarks/_common/config/miosix_settings.h
+index 4059ab5..7598e47 100644
+--- a/benchmarks/_common/config/miosix_settings.h
++++ b/benchmarks/_common/config/miosix_settings.h
+@@ -88,7 +88,7 @@ namespace miosix {
+ /// \def WITH_FILESYSTEM
+ /// Allows to enable/disable filesystem support to save code size
+ /// By default it is defined (filesystem support is enabled)
+-#define WITH_FILESYSTEM
++//#define WITH_FILESYSTEM
+ 
+ /// \def WITH_DEVFS
+ /// Allows to enable/disable DevFs support to save code size
+@@ -98,7 +98,7 @@ namespace miosix {
+ /// \def WITH_FATFS
+ /// Allows to enable/disable FATFS support to save code size
+ /// By default it is defined (FATFS is enabled)
+-#define WITH_FATFS
++//#define WITH_FATFS
+ /// Maxium number of files that can be opened on a mounted FATFS partition.
+ /// Must be greater than 0
+ constexpr unsigned char FATFS_MAX_OPEN_FILES=32;

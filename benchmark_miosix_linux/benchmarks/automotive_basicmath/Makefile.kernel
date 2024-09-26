@@ -1,0 +1,21 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp src/basicmath_small.c src/basicmath_large.c src/rad2deg.c src/cubic.c src/isqrt.c
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+

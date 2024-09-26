@@ -1,0 +1,21 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp src/bmhasrch.c src/bmhisrch.c src/bmhsrch.c src/pbmsrch_large.c src/pbmsrch_small.c
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Isrc
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+

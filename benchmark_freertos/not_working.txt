@@ -1,0 +1,13 @@
+# fscanf
+- qsort
+- typeset
+- djikstra
+- sphinx
+
+# file access without libc
+- mad
+- adpcm
+- pgp (mixed with libc file access because WHY NOT)
+- rsynth
+- ispell
+- tiff*

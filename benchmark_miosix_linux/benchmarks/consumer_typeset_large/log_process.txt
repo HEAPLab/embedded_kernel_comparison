@@ -1,0 +1,15 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 19 2024 13:03:36, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting RomFs as /bin ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 513600 out of 522232 Bytes
+Searching for mystical creatures in the forest...
+Found an elf! consumer_typeset_large.elf
+Running /bin/consumer_typeset_large.elf
+[Miosix MiBench] 'typeset large' start
+[Miosix MiBench] 'typeset large' end, time = 25739533214 ns
+Exit code is 0
+Leaving the forest

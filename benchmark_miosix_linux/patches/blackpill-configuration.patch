@@ -1,0 +1,79 @@
+diff --git a/benchmarks/_common/config/Makefile.inc b/benchmarks/_common/config/Makefile.inc
+index 244dbc6..7183b32 100644
+--- a/benchmarks/_common/config/Makefile.inc
++++ b/benchmarks/_common/config/Makefile.inc
+@@ -37,7 +37,7 @@
+ #OPT_BOARD := stm32f401vc_stm32f4discovery
+ #OPT_BOARD := stm32f103c8_breakout
+ #OPT_BOARD := stm32f100c8_microboard
+-OPT_BOARD := stm32f469ni_stm32f469i-disco
++#OPT_BOARD := stm32f469ni_stm32f469i-disco
+ #OPT_BOARD := stm32f429zi_skyward_homeone
+ #OPT_BOARD := stm32f401re_nucleo
+ #OPT_BOARD := stm32f746zg_nucleo
+@@ -52,7 +52,7 @@ OPT_BOARD := stm32f469ni_stm32f469i-disco
+ #OPT_BOARD := stm32f100c8_vaisala_rs41
+ #OPT_BOARD := stm32l476rg_nucleo
+ #OPT_BOARD := atsam4lc2aa_generic
+-#OPT_BOARD := stm32f411ce_blackpill
++OPT_BOARD := stm32f411ce_blackpill
+ #OPT_BOARD := stm32l4r9zi_sensortile
+ #OPT_BOARD := stm32f767zi_nucleo
+ #OPT_BOARD := stm32f769ni_discovery
+diff --git a/benchmarks/consumer_tiff2bw/Makefile.process b/benchmarks/consumer_tiff2bw/Makefile.process
+index fd18747..b59b17d 100644
+--- a/benchmarks/consumer_tiff2bw/Makefile.process
++++ b/benchmarks/consumer_tiff2bw/Makefile.process
+@@ -1,5 +1,5 @@
+ 
+-PROCESS_RAMSIZE := $$((128*1024))
++#PROCESS_RAMSIZE := $$((128*1024))
+ PROCESS_STACKSIZE := 4096
+ 
+ ##
+diff --git a/benchmarks/consumer_tiffdither/Makefile.process b/benchmarks/consumer_tiffdither/Makefile.process
+index d6e5e99..fb011bc 100644
+--- a/benchmarks/consumer_tiffdither/Makefile.process
++++ b/benchmarks/consumer_tiffdither/Makefile.process
+@@ -1,5 +1,5 @@
+ 
+-PROCESS_RAMSIZE := $$((128*1024))
++#PROCESS_RAMSIZE := $$((128*1024))
+ PROCESS_STACKSIZE := 4096
+ 
+ ##
+diff --git a/benchmarks/makefile_process.inc b/benchmarks/makefile_process.inc
+index 067e20e..8bbeb55 100644
+--- a/benchmarks/makefile_process.inc
++++ b/benchmarks/makefile_process.inc
+@@ -12,7 +12,7 @@ MAKEFILE_VERSION := 1.15
+ include $(KPATH)/libsyscalls/Makefile.pcommon
+ 
+ BIN ?= main
+-PROCESS_RAMSIZE ?= $$((2048*1024))
++PROCESS_RAMSIZE ?= $$((64*1024))
+ PROCESS_STACKSIZE ?= 4096
+ 
+ # configuration options:
+diff --git a/process-launcher/config/Makefile.inc b/process-launcher/config/Makefile.inc
+index c00a6b2..361b427 100644
+--- a/process-launcher/config/Makefile.inc
++++ b/process-launcher/config/Makefile.inc
+@@ -37,7 +37,7 @@
+ #OPT_BOARD := stm32f401vc_stm32f4discovery
+ #OPT_BOARD := stm32f103c8_breakout
+ #OPT_BOARD := stm32f100c8_microboard
+-OPT_BOARD := stm32f469ni_stm32f469i-disco
++#OPT_BOARD := stm32f469ni_stm32f469i-disco
+ #OPT_BOARD := stm32f429zi_skyward_homeone
+ #OPT_BOARD := stm32f401re_nucleo
+ #OPT_BOARD := stm32f746zg_nucleo
+@@ -52,7 +52,7 @@ OPT_BOARD := stm32f469ni_stm32f469i-disco
+ #OPT_BOARD := stm32f100c8_vaisala_rs41
+ #OPT_BOARD := stm32l476rg_nucleo
+ #OPT_BOARD := atsam4lc2aa_generic
+-#OPT_BOARD := stm32f411ce_blackpill
++OPT_BOARD := stm32f411ce_blackpill
+ #OPT_BOARD := stm32l4r9zi_sensortile
+ #OPT_BOARD := stm32f767zi_nucleo
+ #OPT_BOARD := stm32f769ni_discovery

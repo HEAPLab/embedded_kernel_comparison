@@ -1,0 +1,33 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 19 2024 14:26:27, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16667768 out of 16770240 Bytes
+Stack memory statistics.
+Size: 98304
+Used (current/max): 164/876
+Free (current/min): 98140/97428
+Heap memory statistics.
+Size: 16770240
+Used (current/max): 102488/102592
+Free (current/min): 16667752/16667648
+type enter
+
+[Miosix MiBench] 'mad large' start
+MPEG Audio Decoder 0.14.2 (beta) - Copyright (C) 2000-2001 Robert Leslie
+ 00:00:00 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:01 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:02 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:03 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:04 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:05 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:06 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:07 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:08 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:09 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:10 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:11 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:12 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:13 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:14 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:15 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:16 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:17 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:18 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:19 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:20 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:21 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:22 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:23 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:24 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:25 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:26 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:27 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:28 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:29 Layer II, 96 kbps, 44100 Hz, single channel, no CRC 00:00:30 Layer II, 96 kbps, 44100 Hz, single channel, no CRC
+1149 frames decoded (0:00:30.0), -2.0 dB peak amplitude, 0 clipped samples
+[Miosix MiBench] 'mad large' end, time = 65735617363 ns
+[Miosix MiBench] 'mad large' stack usage = 29404 B
+[Miosix MiBench] 'mad large' heap usage = 171200 B
+[Miosix MiBench] 'mad large' heap potential leak = 760 B
+Stack memory statistics.
+Size: 98304
+Used (current/max): 164/29404
+Free (current/min): 98140/68900
+Heap memory statistics.
+Size: 16770240
+Used (current/max): 103512/171200
+Free (current/min): 16666728/16599040

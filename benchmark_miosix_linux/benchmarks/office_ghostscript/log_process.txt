@@ -1,0 +1,19 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 15 2024 12:12:37, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting RomFs as /bin ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 513696 out of 522232 Bytes
+Searching for mystical creatures in the forest...
+Found an elf! office_ghostscript.elf
+Running /bin/office_ghostscript.elf
+type enter
+
+[Miosix MiBench] starting 'ghostscript small'
+[Miosix MiBench] finished 'ghostscript small', time=249376444777 ns
+[Miosix MiBench] starting 'ghostscript large'
+[Miosix MiBench] finished 'ghostscript large', time=231652725807 ns
+Exit code is 0
+Leaving the forest

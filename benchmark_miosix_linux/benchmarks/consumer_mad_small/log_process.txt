@@ -1,0 +1,24 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 19 2024 14:23:03, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting RomFs as /bin ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 513600 out of 522232 Bytes
+Searching for mystical creatures in the forest...
+Found an elf! consumer_mad_small.elf
+Running /bin/consumer_mad_small.elf
+type enter
+
+[Miosix MiBench] 'mad small' start
+MPEG Audio Decoder 0.14.2 (beta) - Copyright (C) 2000-2001 Robert Leslie
+     Title: daddy what does he do2
+      Year: 2001
+     Genre: Other
+   Comment: Encoded with EC's MPEG Suite
+ 00:00:00 Layer III, 64 kbps, 22050 Hz, single channel, no CRC 00:00:01 Layer III, 64 kbps, 22050 Hz, single channel, no CRC 00:00:02 Layer III, 64 kbps, 22050 Hz, single channel, no CRC 00:00:03 Layer III, 64 kbps, 22050 Hz, single channel, no CRC 00:00:04 Layer III, 64 kbps, 22050 Hz, single channel, no CRC
+154 frames decoded (0:00:04.0), -1.9 dB peak amplitude, 0 clipped samples
+[Miosix MiBench] 'mad small' end, time = 7223241816 ns
+Exit code is 0
+Leaving the forest

@@ -1,0 +1,45 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 18 2024 11:45:49, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16704736 out of 16774440 Bytes
+Stack memory statistics.
+Size: 65536
+Used (current/max): 180/876
+Free (current/min): 65356/64660
+Heap memory statistics.
+Size: 16774440
+Used (current/max): 69704/69928
+Free (current/min): 16704736/16704512
+type enter
+
+[Miosix MiBench] 'tiffdither small' start
+/sd/mibench_files/tiff/output_smalldither.tif: 0: Bad value for "FillOrder".
+[Miosix MiBench] 'tiffdither small' end, time = 13878589733 ns
+[Miosix MiBench] 'tiffdither small' stack usage = 2284 B
+[Miosix MiBench] 'tiffdither small' heap usage = 102696 B
+[Miosix MiBench] 'tiffdither small' heap potential leak = 0 B
+Stack memory statistics.
+Size: 65536
+Used (current/max): 180/2284
+Free (current/min): 65356/63252
+Heap memory statistics.
+Size: 16774440
+Used (current/max): 69968/102696
+Free (current/min): 16704472/16671744
+[Miosix MiBench] 'tiffdither large' start
+/sd/mibench_files/tiff/output_largedither.tif: 0: Bad value for "FillOrder".
+[Miosix MiBench] 'tiffdither large' end, time = 36142204650 ns
+[Miosix MiBench] 'tiffdither large' stack usage = 2284 B
+[Miosix MiBench] 'tiffdither large' heap usage = 119080 B
+[Miosix MiBench] 'tiffdither large' heap potential leak = 0 B
+Stack memory statistics.
+Size: 65536
+Used (current/max): 180/2284
+Free (current/min): 65356/63252
+Heap memory statistics.
+Size: 16774440
+Used (current/max): 69968/119080
+Free (current/min): 16704472/16655360

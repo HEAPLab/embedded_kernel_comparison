@@ -1,0 +1,144 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 15 2024 16:21:38, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16346960 out of 16416664 Bytes
+Stack memory statistics.
+Size: 65536
+Used (current/max): 804/916
+Free (current/min): 64732/64620
+Heap memory statistics.
+Size: 16416664
+Used (current/max): 69704/70552
+Free (current/min): 16346960/16346112
+type enter
+
+[Miosix MiBench] starting 'sphinx small'
+ \
+ -adcin TRUE \
+ -adcext 16k \
+ -ctloffset 0 \
+ -ctlcount 100000000 \
+ -agcmax FALSE \
+ -langwt 6.5 \
+ -fwdflatlw 8.5 \
+ -rescorelw 9.5 \
+ -ugwt 0.5 \
+ -fillpen 1e-10 \
+ -silpen 0.005 \
+ -inspen 0.65 \
+ -top 1 \
+ -topsenfrm 3 \
+ -topsenthresh \
+ -70000 \
+ -beam 2e-06 \
+ -npbeam 2e-06 \
+ -lpbeam 2e-05 \
+ -lponlybeam 0.0005 \
+ -nwbeam 0.0005 \
+ -fwdflat FALSE \
+ -fwdflatbeam 1e-08 \
+ -fwdflatnwbeam 0.0003 \
+ -bestpath TRUE \
+ -kbdumpdir model/lm/turtle \
+ -lmfn model/lm/turtle/turtle.lm \
+ -dictfn model/lm/turtle/turtle.dic \
+ -noisedict model/hmm/6k/noisedict \
+ -phnfn model/hmm/6k/phone \
+ -mapfn model/hmm/6k/map \
+ -hmmdir model/hmm/6k \
+ -hmmdirlist model/hmm/6k \
+ -8bsen TRUE \
+ -sendumpfn model/hmm/6k/sendump \
+ -cbdir model/hmm/6k \
+ -matchfn FOO \
+ -ctlfn test.ctl \
+ -datadir ./ \
+ -verbose 10 
+
+
+
+INFO: src/libsphinx2/fbs_main.c(1077): libfbs/main COMPILED ON: Mar 15 2024, AT: 16:21:27
+
+src/libsphinx2/kb_main.c(347): Reading phone file [model/hmm/6k/phone]
+Using 0 phonological mappings
+src/libsphinx2/kb_main.c(356): Reading map file [model/hmm/6k/map]
+Read Map: 125716 phones map to 23355 unique senone sequences
+src/libsphinx2/kb_main.c(360): Reading dict file [model/lm/turtle/turtle.dic]
+dict_load: first line of model/lm/turtle/turtle.dic was A, expecting '!'
+dict_load: will assume first line contains a word
+   111 = words in file [model/lm/turtle/turtle.dic]
+LEFT CONTEXT TABLES
+Entry Context table contains
+	    76 entries
+	  3876 possible cross word triphones.
+	  3268 triphones
+	   608 pseudo diphones
+	     0 uniphones
+Exit Context table contains
+	    76 entries
+	  3876 possible cross word triphones.
+	  3268 triphones
+	   608 pseudo diphones
+	     0 uniphones
+	  1605 right context entries
+	    21 ave entries per exit context
+RIGHT CONTEXT TABLES
+Entry Context table contains
+	    65 entries
+	  3315 possible cross word triphones.
+	  2730 triphones
+	   585 pseudo diphones
+	     0 uniphones
+Exit Context table contains
+	    65 entries
+	  3315 possible cross word triphones.
+	  2730 triphones
+	   585 pseudo diphones
+	     0 uniphones
+	  1625 right context entries
+	    25 ave entries per exit context
+    0 unique triphones were mapped to ci phones
+src/libsphinx2/lm_3g.c(835): Reading LM file model/lm/turtle/turtle.lm (name "")
+src/libsphinx2/lm_3g.c(866): ngrams 1=91, 2=212, 3=177
+src/libsphinx2/lm_3g.c(874): 114 words in dictionary
+src/libsphinx2/lm_3g.c(1409): Looking for precompiled LM dump file model/lm/turtle/turtle.lm.DMP
+src/libsphinx2/lm_3g.c(1413): Precompiled file not found; continue with LM file
+src/libsphinx2/lm_3g.c(522): Reading unigrams
+      91 = #unigrams created
+src/libsphinx2/lm_3g.c(567): Reading bigrams
+
+     212 = #bigrams created
+      20 = #prob2 entries
+      12 = #bo_wt2 entries
+src/libsphinx2/lm_3g.c(647): Reading trigrams
+
+     177 = #trigrams created
+      12 = #prob3 entries
+src/libsphinx2/lm_3g.c(1045): bo_wt(</s>) changed from -0.3010 to -99.0000
+src/libsphinx2/lm_3g.c(1051): prob(<s>) changed from -0.9129 to -99.0000
+    6.50 = Language Weight
+    0.50 = Unigram Weight
+   -4308 = LOG (Insertion Penalty (0.65))
+src/libsphinx2/lm_3g.c(1197): LM("") added
+src/libsphinx2/lm_3g.c(1127): Adding 0 initial OOV words to LM
+src/libsphinx2/hmm_tied_r.c(253): Loading HMMs from dump file model/hmm/6k/sendump
+src/libsphinx2/hmm_tied_r.c(263): BEGIN FILE FORMAT DESCRIPTION
+src/libsphinx2/hmm_tied_r.c(296): CM_2dcalloc(256,6255,1) failedStarting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 15 2024 16:21:38, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16346960 out of 16416664 Bytes
+Stack memory statistics.
+Size: 65536
+Used (current/max): 804/916
+Free (current/min): 64732/64620
+Heap memory statistics.
+Size: 16416664
+Used (current/max): 69704/70552
+Free (current/min): 16346960/16346112
+type enter

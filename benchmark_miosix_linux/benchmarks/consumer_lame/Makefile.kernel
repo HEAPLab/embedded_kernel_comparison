@@ -1,0 +1,56 @@
+c_sources = \
+    src/brhist.c \
+    src/formatBitstream.c \
+    src/fft.c \
+    src/get_audio.c \
+    src/l3bitstream.c \
+    src/id3tag.c \
+    src/ieeefloat.c \
+    src/lame.c \
+    src/newmdct.c \
+    src/parse.c \
+    src/portableio.c \
+    src/psymodel.c \
+    src/quantize.c \
+    src/quantize-pvt.c \
+    src/vbrquantize.c \
+    src/reservoir.c \
+    src/tables.c \
+    src/takehiro.c \
+    src/timestatus.c \
+    src/util.c \
+    src/VbrTag.c \
+    src/version.c \
+    src/gtkanal.c \
+    src/gpkplotting.c \
+    src/mpglib/common.c \
+    src/mpglib/dct64_i386.c \
+    src/mpglib/decode_i386.c \
+    src/mpglib/layer3.c \
+    src/mpglib/tabinit.c \
+    src/mpglib/interface.c \
+    src/mpglib/main.c 
+
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp $(c_sources) src/main.c
+
+BENCHMARK_CFLAGS := -DHAVEMPGLIB -DLAMEPARSE -DNDEBUG -D__NO_MATH_INLINES -DLAMESNDFILE
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+

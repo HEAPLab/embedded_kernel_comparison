@@ -1,0 +1,195 @@
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/include/lm_3g.h sphinx/include/lm_3g.h
+--- sphinx_orig/include/lm_3g.h	2001-10-18 18:28:02.000000000 +0200
++++ sphinx/include/lm_3g.h	2024-03-15 14:36:19.235602412 +0100
+@@ -202,7 +202,7 @@
+ 
+ 
+ /* ----Interface---- */
+-
++/*
+ void	lmSetStartSym (char const *sym);
+ void	lmSetEndSym (char const *sym);
+ lm_t *	NewModel (int32 n_ug, int32 n_bg, int32 n_tg, int32 n_dict);
+@@ -232,5 +232,5 @@
+ void	lm_next_frame (void);
+ 
+ int32   lm_delete (char const *name);
+-
++*/
+ #endif /* _LM_3G_H_ */
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/include/s2params.h sphinx/include/s2params.h
+--- sphinx_orig/include/s2params.h	2001-10-18 18:28:03.000000000 +0200
++++ sphinx/include/s2params.h	2024-03-15 14:17:33.870645536 +0100
+@@ -58,14 +58,14 @@
+ #define _S2PARAMS_H_
+ 
+ /* For saving phone labels in alignment */
+-char const *phonelabdirname;
+-char const *phonelabextname;
+-char const *phonelabtype;
++extern char const *phonelabdirname;
++extern char const *phonelabextname;
++extern char const *phonelabtype;
+ 
+ /* For saving word labels in alignment */
+-char const  *wordlabdirname;
+-char const *wordlabextname;
+-char const *wordlabtype;
++extern char const  *wordlabdirname;
++extern char const *wordlabextname;
++extern char const *wordlabtype;
+ 
+ #endif
+ 
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/src/examples/lm3g2dmp.c sphinx/src/examples/lm3g2dmp.c
+--- sphinx_orig/src/examples/lm3g2dmp.c	2001-10-19 17:47:29.000000000 +0200
++++ sphinx/src/examples/lm3g2dmp.c	2024-03-15 14:38:56.210130522 +0100
+@@ -731,6 +731,8 @@
+     }
+ }
+ 
++static void lm_add (char const *lmname, lm_t *model, double lw, double uw, double wip);
++
+ static FILE *lm_file_open (filename, usepipe)
+     char *filename;
+     int32 usepipe;
+@@ -755,6 +757,8 @@
+     return (fp);
+ }
+ 
++static int32 lm_delete (char const *name);
++
+ /*
+  * Reads in a trigram language model from the given file.
+  */
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/src/libsphinx2/blk_cdcn_norm.c sphinx/src/libsphinx2/blk_cdcn_norm.c
+--- sphinx_orig/src/libsphinx2/blk_cdcn_norm.c	2001-10-18 18:26:47.000000000 +0200
++++ sphinx/src/libsphinx2/blk_cdcn_norm.c	2024-03-15 14:08:42.016525691 +0100
+@@ -53,13 +53,15 @@
+  *   Dummy routine to convert from suitcase to sane varibles
+  ***************************************************************************/
+ 
++static void block_actual_cdcn_norm();
++
+ void block_cdcn_norm (float z[][NUM_COEFF+1],  /* The input cepstrum */
+ 		      int num_frames,          /* Number of frames in utterance */
+ 		      CDCN_type *cdcn_variables)
+ {
+     /* Multidimensional arrays in C suck, so we have to
+        forward-declare-hack this. */
+-    static void block_actual_cdcn_norm();
++    
+     float *variance, *prob, *tilt, *noise, *codebook, *corrbook;
+     int    num_codes;
+ 
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/src/libsphinx2/cdcn_norm.c sphinx/src/libsphinx2/cdcn_norm.c
+--- sphinx_orig/src/libsphinx2/cdcn_norm.c	2001-10-18 18:26:48.000000000 +0200
++++ sphinx/src/libsphinx2/cdcn_norm.c	2024-03-15 14:09:25.900383976 +0100
+@@ -52,11 +52,13 @@
+  *   Dummy routine to convert from suitcase to sane varibles
+  ***************************************************************************/
+ 
++static void actual_cdcn_norm();
++
+ void cdcn_norm (float z[NUM_COEFF+1], /* The input cepstrum */
+ 		CDCN_type *cdcn_variables)
+ {
+     /* Multidimensional arrays, yuck. */
+-    static void actual_cdcn_norm();
++    
+     float *variance, *prob, *tilt, *noise, *codebook, *corrbook;
+     int num_codes;
+ 
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/src/libsphinx2/cdcn_update.c sphinx/src/libsphinx2/cdcn_update.c
+--- sphinx_orig/src/libsphinx2/cdcn_update.c	2001-10-18 18:26:48.000000000 +0200
++++ sphinx/src/libsphinx2/cdcn_update.c	2024-03-15 14:10:58.934165554 +0100
+@@ -60,6 +60,19 @@
+  *
+  *************************************************************************/
+ 
++static float initialize (float data[][NUM_COEFF+1],	/* The observation cepstrum vectors */
++	    int	num_frames,		/* Number of frames in utterance */
++	    float *noise,		/* Cepstrum vector for the noise */
++	    float tilt[],
++	    float speech_threshold,	/* Threshold for speech and noise */
++	    float codebook[][NUM_COEFF+1],
++	    float *prob,
++	    float var[][NUM_COEFF+1],
++	    int ncodes);
++static void correction(float *, float *, float *, float *, int);
++static float max_q (float *, float *, float *, float *, float *,
++        float *, int, float *, int);
++
+ float
+ cdcn_update (float *z,		/* The observed cepstrum vectors */
+ 	     int num_frames,	/* Number of frames in utterance */
+@@ -69,11 +82,7 @@
+     float	*noise, *tilt, *codebook, *prob, *variance, *corrbook;
+     int 	num_codes;
+     /* Multidimensional arrays, gar gar gar */
+-    static float initialize (float *, int, float *, float *, float,
+-			     float *, float *, float *, int);
+-    static void correction(float *, float *, float *, float *, int);
+-    static float max_q (float *, float *, float *, float *, float *,
+-			float *, int, float *, int);
++    
+ 
+     /*
+      * If error, dont bother
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/src/libsphinx2/linklist.c sphinx/src/libsphinx2/linklist.c
+--- sphinx_orig/src/libsphinx2/linklist.c	2001-10-18 18:26:48.000000000 +0200
++++ sphinx/src/libsphinx2/linklist.c	2024-03-15 14:12:57.358279432 +0100
+@@ -52,9 +52,9 @@
+  * 
+  * HISTORY
+  * 
+- * $Log: linklist.c,v $
+- * Revision 1.3  2001/03/29 21:09:41  lenzo
+- * Getting the compile under windows back to normal
++ * $Log: linklist.c,v $
++ * Revision 1.3  2001/03/29 21:09:41  lenzo
++ * Getting the compile under windows back to normal
+  *
+  * Revision 1.2  2000/12/05 01:45:12  lenzo
+  * Restructuring, hear rationalization, warning removal, ANSIfy
+@@ -127,7 +127,8 @@
+ 	cpp = list[i].freelist = (void **) malloc (list[i].n_malloc * elem_size);
+ 	cp = (void *) cpp;
+ 	for (j = list[i].n_malloc-1; j > 0; --j) {
+-	    (char*)cp += elem_size;
++		char *aaa=(char*)cp;
++	    aaa += elem_size;
+ 	    *cpp = cp;
+ 	    cpp = (void **)cp;
+ 	}
+diff -ruN -x Makefile -x ad.h -x 'config.*' -x libtool -x stamp-h -x 'sphinx2-*' -x '*.csh' -x stress2sphinx -x '*.la' -x '*.lai' -x '*.lo' -x '*.o' -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x '*.a' sphinx_orig/src/libsphinx2/search.c sphinx/src/libsphinx2/search.c
+--- sphinx_orig/src/libsphinx2/search.c	2001-10-18 18:26:49.000000000 +0200
++++ sphinx/src/libsphinx2/search.c	2024-03-15 14:14:52.445568066 +0100
+@@ -2256,6 +2256,9 @@
+     lm_next_frame ();
+ }
+ 
++static void compute_phone_perplexity( void );
++static search_hyp_t *fwdtree_pscr_path ( void );
++
+ void
+ search_finish_fwd (void)
+ {
+@@ -2265,7 +2268,7 @@
+     CHAN_T *hmm, /* *thmm,*/ **acl;
+     /* int32 bp, bestbp, bestscore; */
+     /* int32 l_scr; */
+-    static void compute_phone_perplexity( void );
++    
+     
+     if ((CurrentFrame > 0) && (topsen_window > 1)) {
+ 	/* Wind up remaining frames */
+@@ -2326,7 +2329,7 @@
+     /* Get pscr-score for fwdtree recognition */
+     {
+ 	search_hyp_t *pscrpath;
+-	static search_hyp_t *fwdtree_pscr_path ( void );
++	
+ 	
+ 	if (query_phone_conf ()) {
+ 	    pscrpath = fwdtree_pscr_path ();

@@ -1,0 +1,40 @@
+# Note: Buildroot's and Meson's terminologies differ about the meaning
+# of 'build', 'host' and 'target':
+# - Buildroot's 'host' is Meson's 'build'
+# - Buildroot's 'target' is Meson's 'host'
+
+[binaries]
+c = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/bin/arm-buildroot-uclinux-uclibcgnueabi-gcc'
+cpp = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/bin/arm-buildroot-uclinux-uclibcgnueabi-g++'
+ar = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/bin/arm-buildroot-uclinux-uclibcgnueabi-gcc-ar'
+strip = '/bin/true'
+cmake = '/usr/bin/cmake'
+fortran = '/bin/false'
+pkg-config = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/bin/pkgconf'
+g-ir-compiler = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/arm-buildroot-uclinux-uclibcgnueabi/sysroot/usr/bin/g-ir-compiler'
+g-ir-scanner = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/arm-buildroot-uclinux-uclibcgnueabi/sysroot/usr/bin/g-ir-scanner'
+
+[built-in options]
+c_args = ['-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-Wl,-elf2flt=-r', '-static'@PKG_TARGET_CFLAGS@]
+c_link_args = ['-Wl,-elf2flt=-r', '-static'@PKG_TARGET_LDFLAGS@]
+cpp_args = ['-D_LARGEFILE_SOURCE', '-D_LARGEFILE64_SOURCE', '-D_FILE_OFFSET_BITS=64', '-O2', '-g0', '-Wl,-elf2flt=-r', '-static', '-Wl,-elf2flt=-r', '-static'@PKG_TARGET_CXXFLAGS@]
+cpp_link_args = ['-Wl,-elf2flt=-r', '-static'@PKG_TARGET_LDFLAGS@]
+fortran_args = ['-O2', '-g0', '-Wl,-elf2flt=-r', '-static'@PKG_TARGET_FCFLAGS@]
+fortran_link_args = ['-Wl,-elf2flt=-r', '-static'@PKG_TARGET_LDFLAGS@]
+wrap_mode = 'nodownload'
+cmake_prefix_path = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/arm-buildroot-uclinux-uclibcgnueabi/sysroot/usr/lib/cmake'
+
+[properties]
+needs_exe_wrapper = true
+sys_root = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/arm-buildroot-uclinux-uclibcgnueabi/sysroot'
+pkg_config_libdir = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/arm-buildroot-uclinux-uclibcgnueabi/sysroot/usr/lib/pkgconfig:/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/arm-buildroot-uclinux-uclibcgnueabi/sysroot/usr/share/pkgconfig'
+pkg_config_static = 'true'
+# enable meson build to pass a toolchain file to cmake
+cmake_toolchain_file = '/home/dcattaneo/Documents/stm32-linux/buildroot-2024.02/output/host/share/buildroot/toolchainfile.cmake'
+cmake_defaults = false
+
+[host_machine]
+system = 'linux'
+cpu_family = 'arm'
+cpu = 'cortex-m4'
+endian = 'little'

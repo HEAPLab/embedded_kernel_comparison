@@ -1,0 +1,1 @@
+diff -ruN sphinx_orig/ sphinx -x Makefile -x ad.h -x config.* -x libtool -x stamp-h -x sphinx2-* -x *.csh -x stress2sphinx -x *.la -x *.lai -x *.lo -x *.o -x adrec -x adpow -x cont_adseg -x cont_fileseg -x lm3g2dmp -x raw2cep -x *.a > c-code.patch

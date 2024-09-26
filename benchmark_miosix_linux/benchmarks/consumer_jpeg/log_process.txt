@@ -1,0 +1,19 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 15 2024 18:24:28, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting RomFs as /bin ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 513696 out of 522232 Bytes
+Searching for mystical creatures in the forest...
+Found an elf! consumer_jpeg.elf
+Running /bin/consumer_jpeg.elf
+type enter
+
+[Miosix MiBench] starting 'jpeg small'
+[Miosix MiBench] finished 'jpeg small', time=10151587572 ns
+[Miosix MiBench] starting 'jpeg large'
+[Miosix MiBench] finished 'jpeg large', time=28862520285 ns
+Exit code is 0
+Leaving the forest

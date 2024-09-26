@@ -1,0 +1,13 @@
+PROCESS_STACKSIZE := 32768
+
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp src/bf_skey.c src/bf_ecb.c src/bf_enc.c src/bf_cbc.c src/bf_cfb64.c src/bf_ofb64.c src/bf.c
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Isrc
+
+

@@ -1,0 +1,57 @@
+##
+## Common code for building Miosix processes
+##
+
+## KPATH and CONFPATH should be forwarded by the parent Makefile
+ifeq ($(KPATH),)
+    $(info Error: KPATH not specified)
+    $(error Error)
+endif
+ifeq ($(CONFPATH),)
+    $(info Error: CONFPATH not specified)
+    $(error Error)
+endif
+
+all:
+
+include $(CONFPATH)/config/Makefile.inc
+
+OBJ_DIR ?= obj
+BIN_MAP := $(OBJ_DIR)/$(notdir $(BIN)).map
+BIN_ELF := $(notdir $(BIN)).elf
+
+AFLAGS   ?= $(CPU)
+CFLAGS   ?= -MMD -MP $(CPU) -fpie -msingle-pic-base -ffunction-sections -Wall  \
+            -D_DEFAULT_SOURCE=1 $(OPT_OPTIMIZATION)        \
+            $(INCLUDE_DIRS) -g -c
+CXXFLAGS ?= -std=c++14 $(PROC_OPT_EXCEPT) $(CFLAGS)
+LFLAGS   ?= $(CPU) -fpie -msingle-pic-base -nostdlib -Wl,--gc-sections         \
+            -Wl,-Map,$(BIN_MAP),-T$(KPATH)/libsyscalls/process.ld    \
+            -Wl,-n,-pie,--spare-dynamic-tags,3,--target2=mx-data-rel
+STDLIBS  := -lsyscalls -lstdc++ -lc -lm -lgcc -latomic
+LINK_LIBS ?= $(LIBS) -L$(OBJ_DIR) -Wl,--start-group $(STDLIBS)       \
+             -Wl,--end-group
+
+OBJ ?= $(patsubst %, $(OBJ_DIR)/%, $(addsuffix .o, $(basename $(SRC))))
+
+$(OBJ_DIR)/%.o : %.cpp $(OBJ_DIR)
+	$(ECHO) "[CXX ] $<"
+	$(Q)$(CXX) $(CXXFLAGS) $< -o $@
+
+$(OBJ_DIR)/%.o : %.c $(OBJ_DIR)
+	$(ECHO) "[CC  ] $<"
+	$(Q)$(CC)  $(CFLAGS) $< -o $@
+
+$(OBJ_DIR)/%.o: %.s $(OBJ_DIR)
+	$(ECHO) "[AS  ] $<"
+	$(Q)$(AS)  $(AFLAGS) $< -o $@
+
+.PHONY: $(OBJ_DIR)
+$(OBJ_DIR):
+	mkdir -p $(dir $(OBJ))
+
+.PHONY: objdir_clean
+objdir_clean:
+	rm -rf $(OBJ_DIR)
+
+clean: objdir_clean

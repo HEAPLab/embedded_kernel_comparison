@@ -1,0 +1,30 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp \
+    src/say.c \
+    src/saynum.c \
+    src/darray.c \
+    src/ASCII.c \
+    src/phones.c \
+    src/text.c \
+    src/english.c \
+    src/trie.c \
+    src/phtoelm.c \
+    src/holmes.c \
+    src/elements.c \
+    src/nsynth.c \
+    src/def_pars.c \
+    src/l2u.c \
+    src/aufile.c \
+    src/dict.c \
+    src/getarg.c \
+    src/Revision.c \
+    src/hplay.c
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Isrc
+
+

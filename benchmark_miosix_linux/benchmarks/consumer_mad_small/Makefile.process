@@ -1,0 +1,74 @@
+
+PROCESS_RAMSIZE := $$((256*1024))
+PROCESS_STACKSIZE := 32768
+
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp \
+src/audio.c \
+src/equalizer.c \
+src/audio_null.c \
+src/version.c \
+src/player.c \
+src/strcasecmp.c \
+src/audio_hex.c \
+src/audio_raw.c \
+src/madplay.c \
+src/strncasecmp.c \
+src/resample.c \
+src/audio_cdda.c \
+src/audio_wave.c \
+src/filter.c \
+src/audio_aiff.c \
+src/xing.c \
+src/audio_snd.c \
+src/libmad/version.c \
+src/libmad/frame.c \
+src/libmad/fixed.c \
+src/libmad/timer.c \
+src/libmad/huffman.c \
+src/libmad/stream.c \
+src/libmad/synth.c \
+src/libmad/layer12.c \
+src/libmad/layer3.c \
+src/libmad/bit.c \
+src/libmad/decoder.c \
+src/libid3tag/render.c \
+src/libid3tag/field.c \
+src/libid3tag/tag.c \
+src/libid3tag/version.c \
+src/libid3tag/debug.c \
+src/libid3tag/ucs4.c \
+src/libid3tag/util.c \
+src/libid3tag/parse.c \
+src/libid3tag/genre.c \
+src/libid3tag/compat.c \
+src/libid3tag/frame.c \
+src/libid3tag/latin1.c \
+src/libid3tag/utf16.c \
+src/libid3tag/crc.c \
+src/libid3tag/file.c \
+src/libid3tag/frametype.c \
+src/libid3tag/utf8.c \
+src/libz/adler32.c \
+src/libz/trees.c \
+src/libz/zutil.c \
+src/libz/crc32.c \
+src/libz/inflate.c \
+src/libz/infutil.c \
+src/libz/inffast.c \
+src/libz/compress.c \
+src/libz/inftrees.c \
+src/libz/gzio.c \
+src/libz/deflate.c \
+src/libz/infblock.c \
+src/libz/infcodes.c \
+src/libz/uncompr.c
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common -Isrc -Isrc/libid3tag -Isrc/libmad -Isrc/libz -DHAVE_CONFIG_H -DFPM_DEFAULT -DLOCALEDIR=\"/sd/mibench_files/mad/locale\"
+
+

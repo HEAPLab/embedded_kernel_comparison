@@ -1,0 +1,43 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 18 2024 09:35:16, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 16704648 out of 16774352 Bytes
+Stack memory statistics.
+Size: 65536
+Used (current/max): 156/876
+Free (current/min): 65380/64660
+Heap memory statistics.
+Size: 16774352
+Used (current/max): 69704/69840
+Free (current/min): 16704648/16704512
+type enter
+
+[Miosix MiBench] 'tiff2bw small' start
+[Miosix MiBench] 'tiff2bw small' end, time = 28938026454 ns
+[Miosix MiBench] 'tiff2bw small' stack usage = 2284 B
+[Miosix MiBench] 'tiff2bw small' heap usage = 108752 B
+[Miosix MiBench] 'tiff2bw small' heap potential leak = 1528 B
+Stack memory statistics.
+Size: 65536
+Used (current/max): 156/2284
+Free (current/min): 65380/63252
+Heap memory statistics.
+Size: 16774352
+Used (current/max): 71496/108752
+Free (current/min): 16702856/16665600
+[Miosix MiBench] 'tiff2bw large' start
+[Miosix MiBench] 'tiff2bw large' end, time = 131605487612 ns
+[Miosix MiBench] 'tiff2bw large' stack usage = 2284 B
+[Miosix MiBench] 'tiff2bw large' heap usage = 148688 B
+[Miosix MiBench] 'tiff2bw large' heap potential leak = 3080 B
+Stack memory statistics.
+Size: 65536
+Used (current/max): 156/2284
+Free (current/min): 65380/63252
+Heap memory statistics.
+Size: 16774352
+Used (current/max): 74576/148688
+Free (current/min): 16699776/16625664

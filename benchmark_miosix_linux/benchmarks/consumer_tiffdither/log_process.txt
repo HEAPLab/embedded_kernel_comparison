@@ -1,0 +1,21 @@
+Starting Kernel... Ok
+Miosix v2.7 (stm32f469ni_stm32f469i-disco, Mar 18 2024 11:59:01, gcc 9.2.0-mp3.1)
+Mounting MountpointFs as / ... Ok
+Mounting DevFs as /dev ... Ok
+Mounting RomFs as /bin ... Ok
+Mounting Fat32Fs as /sd ... Ok
+OS Timer freq = 84000000 Hz
+Available heap 513696 out of 522232 Bytes
+Searching for mystical creatures in the forest...
+Found an elf! consumer_tiffdither.elf
+Running /bin/consumer_tiffdither.elf
+type enter
+
+[Miosix MiBench] 'tiffdither small' start
+/sd/mibench_files/tiff/output_smalldither.tif: 0: Bad value for "FillOrder".
+[Miosix MiBench] 'tiffdither small' end, time = 14455436965 ns
+[Miosix MiBench] 'tiffdither large' start
+/sd/mibench_files/tiff/output_largedither.tif: 0: Bad value for "FillOrder".
+[Miosix MiBench] 'tiffdither large' end, time = 38174032879 ns
+Exit code is 0
+Leaving the forest

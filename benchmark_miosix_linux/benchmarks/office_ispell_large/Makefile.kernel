@@ -1,0 +1,33 @@
+##
+## List here your source files (both .s, .c and .cpp)
+##
+SRC := main.cpp src/_stubs.c \
+    src/term.c \
+    src/ispell.c \
+    src/correct.c \
+    src/defmt.c \
+    src/dump.c \
+    src/good.c \
+    src/lookup.c \
+    src/hash.c \
+    src/makedent.c \
+    src/tgood.c \
+    src/tree.c \
+    src/xgets.c
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+

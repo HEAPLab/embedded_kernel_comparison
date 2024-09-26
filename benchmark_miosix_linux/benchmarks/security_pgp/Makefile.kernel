@@ -1,0 +1,37 @@
+
+
+##
+## List here your source files (both .s, .c and .cpp)
+##
+RSASRCS := src/rsaglue1.c
+
+ZIPSRCS := src/zbits.c src/zdeflate.c src/zfile_io.c src/zglobals.c \
+    src/zinflate.c src/zip.c src/zipup.c src/ztrees.c src/zunzip.c 
+
+PGPSRCS := src/pgp.c src/crypto.c src/keymgmt.c src/fileio.c \
+    src/mdfile.c src/more.c src/armor.c src/mpilib.c src/mpiio.c \
+    src/genprime.c src/rsagen.c src/random.c src/idea.c src/passwd.c \
+    src/md5.c src/system.c src/language.c src/getopt.c src/keyadd.c \
+    src/config.c src/keymaint.c src/charset.c \
+    src/randpool.c src/noise.c
+
+SRC := main.cpp src/_access.c $(RSASRCS) $(ZIPSRCS) $(PGPSRCS)
+
+##
+## List here additional static libraries with relative path
+##
+LIBS :=
+
+##
+## List here additional include directories (in the form -Iinclude_dir)
+##
+INCLUDE_DIRS := -I../_common
+
+BENCHMARK_CFLAGS := -g3 -DUNIX -DIDEA32 -DPORTABLE -DMIOSIX
+
+##
+## Attach a romfs filesystem image after the kernel
+##
+ROMFS_DIR :=
+
+
