@@ -23,7 +23,7 @@ To clean up build products: `make clean`
 
 ## Running the benchmarks
 
-Prepare an SD card with the contents of the `benchmark_data_files`
+Prepare an SD card with the contents of the `benchmark_data-files`
 directory in the root.
 Then you can run the Miosix benchmarks simply by flashing the
 .bin files to the internal Flash.
