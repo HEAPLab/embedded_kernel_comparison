@@ -8,6 +8,11 @@ the `stm32f469_images` directory.
 `make` compiles binaries for all benchmarks and platforms --
 Linux, Miosix kernel-mode and process-mode.
 
+First install required Perl package dependencies:
+`sudo apt-get install libfile-slurp-perl` (Ubuntu/Debian)
+
+Add the toolchains to the path: `source ../setenv.sh`
+
 To compile for just Linux: `make all_linux`
 
 To compile for just Miosix kernel-mode: `make all_kernel`
