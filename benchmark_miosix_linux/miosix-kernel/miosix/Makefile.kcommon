@@ -34,6 +34,8 @@ OBJ_DIR ?= obj
 OBJ ?= $(patsubst %, $(OBJ_DIR)/%, $(addsuffix .o, $(basename $(SRC))))
 
 SUBDIRS := $(KPATH)
+# Not adding libsyscalls to SUBDIRS because it has to be built before
+LIBSYS  := $(KPATH)/libsyscalls
 
 .DEFAULT_GOAL := all
 
@@ -50,18 +52,26 @@ $(TOOLS_DIR)/filesystems/buildromfs:
 	$(Q)cd $(TOOLS_DIR)/filesystems/build         \
 	  && cmake --log-level=ERROR .. && $(MAKE) -s
 
-all-recursive:
+all-recursive: $(if $(POSTLD), $(LIBSYS)/libsyscalls.a)
 	$(foreach i,$(SUBDIRS),$(MAKE) -C $(i)                                 \
 	  KPATH=$(shell perl $(TOOLS_DIR)/relpath.pl $(i) $(KPATH))            \
 	  CONFPATH=$(shell perl $(TOOLS_DIR)/relpath.pl $(i) $(CONFPATH))      \
 	  OBJ_DIR=$(shell perl $(TOOLS_DIR)/relpath.pl $(i) $(OBJ_DIR))        \
 	  || exit 1;)
 
+$(LIBSYS)/libsyscalls.a:
+	$(Q)$(MAKE) -C $(LIBSYS)                                               \
+	  KPATH=$(shell perl $(TOOLS_DIR)/relpath.pl $(LIBSYS) $(KPATH))       \
+	  CONFPATH=$(shell perl $(TOOLS_DIR)/relpath.pl $(LIBSYS) $(CONFPATH)) \
+	  OBJ_DIR=$(shell perl $(TOOLS_DIR)/relpath.pl $(LIBSYS) $(OBJ_DIR))        \
+	  || exit 1;
+
 clean-recursive:
 	for i in $(SUBDIRS); do \
 	  $(MAKE) -C $$i                                 \
 	  KPATH=$$(perl $(TOOLS_DIR)/relpath.pl $$i $(KPATH))            \
 	  CONFPATH=$$(perl $(TOOLS_DIR)/relpath.pl $$i $(CONFPATH))      \
+	  OBJ_DIR=$(shell perl $(TOOLS_DIR)/relpath.pl $$i $(OBJ_DIR))   \
 	  clean; \
 	done
 	$(Q)rm -f image.bin romfs.bin $(TOOLS_DIR)/filesystems/buildromfs
