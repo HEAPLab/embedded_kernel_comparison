@@ -17,3 +17,4 @@ benchmark-spawn_linux/child
 benchmark-spawn_miosix/bin
 benchmark-spawn_miosix/benchmark-spawn/benchmark-spawn
 benchmark-spawn_miosix/child/child
+!benchmark-spawn_miosix/stm32f469_image.bin
