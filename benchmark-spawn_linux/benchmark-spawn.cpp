@@ -28,9 +28,14 @@ int main(int argc, char *argv[])
     char *const envp[] = { nullptr };
     int err = posix_spawn(&pid, fn, nullptr, nullptr, argv, envp);
     if (err) {
-        fprintf(stderr, "fatal: posix_spawn failed with code %d\n", err);
+        fiprintf(stderr, "fatal: posix_spawn failed with code %d (count=%d)\n", err, i);
         exit(1);
     }
-    waitpid(pid, nullptr, 0);
+    int stat;
+    err = waitpid(pid, &stat, 0);
+    if (err < 0 || !WIFEXITED(stat)) {
+        fiprintf(stderr, "fatal: waitpid failed (count=%d)\n", i);
+        exit(1);
+    }
     END_BENCHMARK;
 }

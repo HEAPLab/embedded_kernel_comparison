@@ -31,6 +31,11 @@ int main(int argc, char *argv[])
         fiprintf(stderr, "fatal: posix_spawn failed with code %d (count=%u)\n", err, i);
         exit(1);
     }
-    waitpid(pid, nullptr, 0);
+    int stat;
+    err = waitpid(pid, &stat, 0);
+    if (err < 0 || !WIFEXITED(stat)) {
+        fiprintf(stderr, "fatal: waitpid failed (count=%d)\n", i);
+        exit(1);
+    }
     END_BENCHMARK;
 }
